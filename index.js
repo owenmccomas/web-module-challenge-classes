@@ -44,7 +44,21 @@ class Airplane {
 */
 
 class Person {
-  
+  constructor(name, age) {
+    this.name = name;
+    this.age = age;
+    this.stomach = [];
+  }
+  eat(food) {if (this.stomach.length <= 10)
+    { this.stomach.push(food);
+    } else {return 'Stomach is full'}
+  }
+  poop(){
+    this.stomach = [];
+  }
+  toString(){
+    `${this.name}, ${this.age}`
+  }
 }
 
 /*
@@ -62,9 +76,20 @@ class Person {
 */
 
 class Car {
-  
+  constructor(model, milesPerGallon){
+    this.model = model;
+    this.milesPerGallon = milesPerGallon;
+    tank = 0;
+    odometer = 0;
+  }
+  fill(gallons){
+    return tank + gallons
+  }
+  drive(distance){if (tank > distance){
+    return odometer + distance
+  } else {return `I ran out of fuel at ${odometer} miles!`}
+  }
 }
-
 /*
   TASK 3
     - Write a Lambdasian class.
@@ -79,7 +104,14 @@ class Car {
 */
 
 class Lambdasian {
-  
+  constructor(name, age, location){
+    this.name = name;
+    this.age = age;
+    this.location = location;
+  }
+  speak(){
+    `Hello my name is ${this.name}, I am from ${this.location}`
+  }
 }
 
 /*
@@ -98,7 +130,13 @@ class Lambdasian {
 */
 
 class Instructor {
-
+  constructor(attrs = {
+    speciality: speciality,
+    favLanguage: favLanguage,
+    catchPhrase: catchPhrase,
+  }){
+    
+  }
 }
 
 /*
